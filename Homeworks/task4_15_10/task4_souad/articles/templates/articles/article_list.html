@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Articles</title>
+</head>
+<body>
+    <h1>Article List</h1>
+    <ul>
+        {% for ar in articles %}
+            <li>
+                <h3>{{ ar.title }}</h3>
+                <p>{{ ar.content }}</p>
+                <small>{{ ar.created_at }}</small>
+            </li>
+        {% empty %}
+            <li>No articles yet.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'form' %}">New Article</a>
+</body>
+</html>
